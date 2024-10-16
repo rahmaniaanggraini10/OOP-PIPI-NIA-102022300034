@@ -119,10 +119,9 @@ public class EADTicketBookingSystem {
     public static void main(String[] args) {
         Pembelian pembelian = new Pembelian();
 
-        pembelian.tambahPenerbangan(new Penerbangan("GA101", "Jakarta", "Surabaya", "07:00", "09:00", 750000));
-        pembelian.tambahPenerbangan(new Penerbangan("GA102", "Jakarta", "Bali", "08:00", "10:00", 850000));
-        pembelian.tambahPenerbangan(new Penerbangan("GA103", "Jakarta", "Yogyakarta", "09:00", "11:00", 650000));
-
+        pembelian.tambahPenerbangan(new Penerbangan("GA101", "CGK, Jakarta", "DPS, Bali", "06:30", "08:15", 12000000));
+        pembelian.tambahPenerbangan(new Penerbangan("QZ202", "SUB, Surabaya", "KNO, Medan", "09:00", "11:45", 13500000));
+        
         Scanner scanner = new Scanner(System.in);
         int pilihan;
 
