@@ -1,19 +1,30 @@
-public class Main {
-    public static void main(String[] args){
-        Hewan Hewan1 = new Hewan("Hewan Liar", 5);
-        Hewan1.suara();
-        Hewan1.makan();
-        Hewan1.makan("Daging");
-        Hewan1.infoHewan();
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
-        Kucing Kucing1 = new Kucing("SapiGemoy", 2, "Persia");
-        Kucing1.suara();
-        Kucing1.makan("Ikan");
-        Kucing1.infoHewan();
+public class Main extends Application {
 
-        Burung Burung1 = new Burung("SamoGemoy", 1, "Hijau");
-        Burung1.suara();
-        Burung1.makan("Biji-Bijian");
-        Burung1.infoHewan();
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        // Memuat file FXML untuk mendefinisikan tampilan aplikasi
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("MainApp.fxml"));
+        BorderPane root = loader.load();
+
+        // Membuat scene (tampilan utama) dan mengatur layout root ke dalamnya
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+
+        // Mengatur judul jendela aplikasi
+        primaryStage.setTitle("Task Manager");
+
+        // Menampilkan jendela aplikasi
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        // Meluncurkan aplikasi JavaFX
+        launch(args);
     }
 }
