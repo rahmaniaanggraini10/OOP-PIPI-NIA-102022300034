@@ -1,0 +1,54 @@
+public class Artist{
+
+    int JumlahTotal, JumlahRented, Available;
+    String AlbumName, NamaArtist;
+
+    public Artist(int JumlahTotal, int TextFieldJumlahRented, int Available, String AlbumName, String NamaArtist){
+        this.JumlahTotal = JumlahTotal;
+        this.JumlahRented = JumlahRented;
+        this.Available = Available;
+        this.AlbumName = AlbumName;
+        this.NamaArtist = NamaArtist;
+    }
+
+    public int getJumlahTotal(){
+        return JumlahTotal;
+    }
+
+    public void setJumlahTotal(){
+        JumlahTotal = JumlahTotal;
+    }
+
+    public int getJumlahRented(){
+        return JumlahRented;
+    }
+
+    public void setJumlahRented(){
+        JumlahRented = JumlahRented;
+    }
+
+    public int getAvailable(){
+        return Available;
+    }
+
+    public void setAvailable(){
+        Available = Available;
+    }
+
+    public String getAlbumName(){
+        return AlbumName;
+    }
+
+    public void setAlbumName(){
+        this.AlbumName = AlbumName;
+    }
+
+    public String getNamaArtist(){
+        return NamaArtist;
+    }
+
+    public void setNamaArtist(){
+        this.NamaArtist = NamaArtist
+    }
+
+}

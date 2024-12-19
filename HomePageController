@@ -1,0 +1,182 @@
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TextField;
+
+public class PleaseProvideControllerClassName {
+
+    int JumlahTotalArtist;
+    int JumlahRentedArtist;
+    int AvailableArtist;
+    String AlbumNameArtis;
+    String NamaArtistArtist;
+
+
+    @FXML
+    private TableColumn<Artist, String> TextFieldAlbumName;
+
+    @FXML
+    private TableColumn<Artist, String> TextFieldArtist;
+
+    @FXML
+    private TableColumn<Artist, Integer> TextFieldAvailable;
+
+    @FXML
+    private TextField TextFieldJudulAlbum;
+
+    @FXML
+    private TextField TextFieldJumlahRented;
+
+    @FXML
+    private TextField TextFieldJumlahTotal;
+
+    @FXML
+    private TableColumn<Artist, Integer> TextFieldTotal;
+
+    @FXML
+    private TextField TextFildNamaArtist;
+
+    @FXML
+    void HapusFunction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void RentSelectedFunction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void TambahFunction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void UpdateFunction(ActionEvent event) {
+
+    }
+
+public void initialize(){
+    JumlahTotal.setCellValueFactory(new PropertyValueFactory<Artist, Integer>("JumlahTotal"));
+    JumlahRented.setCellValueFactory(new PropertyValueFactory<Artist, Integer>("JumlahRented"));
+    Available.setCellValueFactory(new PropertyValueFactory<Artist, Integer>("Available"));
+    AlbumName.setCellValueFactory(new PropertyValueFactory<Artist, Integer>("AlbumName"));
+    NamaArtist.setCellValueFactory(new PropertyValueFactory<Artist, Integer>("NamaArtist"));
+
+    tableDataArtist.setItems(dataArtist);
+}
+
+public void clearData(){
+    tfJumlahTotal.clear();
+    tfJumlahRented.clear();
+    tfAvailable.clear();
+    tfAlbumName.clear();
+    tfNamaArtist.clear();
+}
+@FXML
+    void addData(ActionEvent event){
+        try{
+            JumlahTotalArtist = Integer.valueOf(tfJumlahTotal.getText());
+            JumlahRentedArtist = Integer.valueOf(tfJumlahRented.getTeext());
+            AvailableArtist = Integer.valueOf(tfAvailable.getText());
+            AlbumNameArtis = tfAlbumName.getTxt();
+            NamaArtistArtist = tfNamaArtist.getText();
+
+            Artist Artist = new Artist(JumlahTotalArtist, JumlahRentedArtist, AvailableArtist, AlbumNameArtis, NamaArtistArtist);
+
+            if(dataArtist.isEmpty()){
+                dataArtist.add(Artist);
+                clearData();
+            }
+
+            else {
+                for (Artist i : dataArtist){
+
+                    if (i.getJumlahTotal() == JumlahTotalArtist){
+                        Alert alert = new Alert(AlertType.ERROR);
+                        alert.setTitle("ERROR");
+                        alert.setContentText("Silahkan cek data yang anda masukkan");
+                        alert.showAndWait();
+                    }
+
+                    else{
+                        dataArtist.add(Artist);
+                        clearData();
+                        break;
+                    }
+                }
+            }
+        }
+
+        } catch (Exception e){
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Kesalahan dalam input data");
+            alert.setContentText("Apakah anda yakin");
+            alert.showAndWait();
+
+            }
+    }
+} 
+
+@FXML
+void showData(MouseEvent event){
+
+    try{
+        if (even.getClickCount() == 1){
+            tfJumlahTotal.setText(Integer.valueOf(tableDataArtist.getSelectionModel().getSelectdItem().getArtist()));
+            tfJumlahTotal.setDisable(true);
+            tfJumlahRented.setText(
+                String.valueOf(tableDataMahasiswa.getSelectionModel().getSelectedItem().getJumlahRented()));
+            tfAlbumName.setText(String.valueOf(tableDataArtist.getSelectionModel().getSelectedItem().getAlbumName()));
+            
+        }catch (Exception e){
+            Alert alert = new Alert(AlertType.ERROR);
+            Alert.setTitle("Tidak ada data");
+            Alert.setContentText("Silahnjhdbj");
+            Alert.showAndWait();
+        }
+            
+        }
+    }
+}
+
+@FXML
+    void deleteData(ActionEvent event){
+        try{
+            for (Artist i : dataArtist){
+                if (i.getJumlahTotal() == JumlahTotalArtist){
+                    dataArtist.remove(i);
+                    clearData();
+                    break;
+                }
+            }
+        }catch (Exception e){
+            Alert alert = new Alert(AlertType.ERROR);
+            Alert.setTitle("ERROR");
+            Alert.setContentText("Gavhbdjnk");
+            Alert.showAndWait();
+        }
+        }
+
+    }
+@FXML
+void editData(ActionEvent event){
+    int index = 0;
+    
+    try{
+        JumlahTotalArtist = Integer.valuOf(tfJumlahTotal.getText());
+        AlbumNameArtis = tfAlbumName.getText();
+        NamaArtistArtist = tfNamaArtist.getText();
+        JumlahRentedArtist = Integer.valueOf(tfJumlahRented.getText());
+        AvailableArtist = Integer.valueOf(tfAvailable.getText());
+
+        Artist Artist = new Artist(JumlahTotalArtist,, JumlahRentedArtist, AvailableArtist, AlbumNameArtis, NamaArtistArtist);
+
+    } catch (Exception e){
+        Alert Alert = new Alert(AlertType.ERROR);
+        Alert.setTitle("kesvghbjnk");
+        Alert.setContentText("xfkl");
+        alert.showAndWait();
+    }
+    }
+}
